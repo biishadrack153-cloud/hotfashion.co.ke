@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOT FASHION | Wear Your Confidence</title>
+<style>
+:root{--ink:#171717;--muted:#777;--cream:#f7f4ef;--accent:#a52d42;--line:#e8e3dc}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
+.announcement{background:#171717;color:#fff;text-align:center;padding:10px;font-size:12px;letter-spacing:1px}
+header{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 6%;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:5}
+.logo{font-size:25px;font-weight:900;letter-spacing:2px}.logo span{color:var(--accent)}nav{display:flex;gap:22px}nav a{color:#222;text-decoration:none;font-size:13px;font-weight:700}
+.header-actions{display:flex;align-items:center;gap:10px}.cart-btn{border:0;background:#171717;color:#fff;padding:11px 15px;cursor:pointer;font-weight:700}
+.hero{background:linear-gradient(120deg,#1a0f13,#3a1420);display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:56px 6%;color:#fff}.portrait{width:100%;max-width:290px;margin-left:auto;aspect-ratio:271/500;border:6px solid #fff;border-radius:150px 150px 10px 10px;overflow:hidden;background:#ece7f5;box-shadow:0 18px 40px #0007}.portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}.intro-facts{display:flex;gap:26px;flex-wrap:wrap;margin-top:26px;font-size:12px;letter-spacing:1px;color:#ddd}.intro-facts b{display:block;font-size:20px;color:#fff;letter-spacing:0}
+.hero-copy{max-width:510px}.eyebrow{font-size:12px;letter-spacing:3px;font-weight:bold}.hero h1{font-size:clamp(42px,7vw,76px);line-height:.98;margin:18px 0}.hero p{line-height:1.7;color:#eee;max-width:420px}.primary{display:inline-block;background:var(--accent);color:#fff;border:0;padding:15px 24px;text-decoration:none;font-weight:bold;cursor:pointer;margin-top:12px}
+section{padding:58px 6%}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:25px}.section-head h2{font-size:30px;margin:0}.section-head p{color:var(--muted);font-size:13px;margin:7px 0 0}
+.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.category{height:210px;position:relative;overflow:hidden;background:#e9e3f3}.category img{width:100%;height:100%;object-fit:cover;object-position:center top}.category strong{position:absolute;bottom:18px;left:18px;color:#fff;font-size:21px;text-shadow:0 2px 8px #000}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.product{min-width:0}.product-image{height:290px;background:#ece7f5;position:relative;overflow:hidden}.product-image img{width:100%;height:100%;object-fit:cover;object-position:center top}.product-image.gown img{object-fit:contain}.tag{position:absolute;top:12px;left:12px;background:#fff;padding:6px 9px;font-size:10px;font-weight:bold}.product h3{font-size:14px;margin:13px 0 6px}.price{font-size:14px;font-weight:bold}.add{display:block;width:100%;border:1px solid #222;background:#fff;padding:11px;margin-top:12px;font-weight:bold;cursor:pointer}.add:hover{background:#171717;color:#fff}
+.promo{background:var(--cream);display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px}.promo img{width:100%;height:330px;object-fit:contain;background:#ece7f5}.promo h2{font-size:38px;margin:12px 0}.promo p{color:#666;line-height:1.7}
+.request{background:#faf7f4}.request-wrap{max-width:760px;margin:auto;background:#fff;padding:28px;border:1px solid var(--line)}.request-wrap h2{margin-top:0}.field{margin:13px 0}.field label{display:block;font-size:12px;font-weight:bold;margin-bottom:6px}.field input,.field textarea,.field select{width:100%;padding:12px;border:1px solid #ccc;font:inherit}.field textarea{min-height:75px;resize:vertical}.upload{border:1px dashed #aaa;padding:20px;text-align:center;background:#fcfbf9}.preview{display:none;max-width:180px;max-height:220px;object-fit:contain;margin:12px auto}.submit{background:#25a244;color:#fff;border:0;padding:14px 20px;width:100%;font-weight:bold;cursor:pointer}.hint,.note{font-size:12px;color:#777;line-height:1.55}
+footer{background:#171717;color:#fff;padding:42px 6%;display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}footer p{color:#bbb;font-size:13px;line-height:1.7}footer a{color:#bbb}.footer-title{font-weight:900;letter-spacing:2px;font-size:21px}
+.overlay{position:fixed;inset:0;background:#0008;z-index:10;display:none}.overlay.show{display:block}.drawer{position:absolute;right:0;top:0;height:100%;width:min(430px,100%);background:#fff;padding:25px;overflow:auto}.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:15px}.close{background:none;border:0;font-size:25px;cursor:pointer}.cart-item{display:flex;gap:13px;padding:17px 0;border-bottom:1px solid var(--line)}.cart-item img{width:75px;height:90px;object-fit:cover;object-position:center top;background:#ece7f5}.cart-item h4{margin:4px 0 8px;font-size:14px}.cart-item p{margin:0;color:#666;font-size:13px}.remove{border:0;background:none;color:var(--accent);padding:8px 0;cursor:pointer}.total{display:flex;justify-content:space-between;font-weight:bold;font-size:18px;margin:22px 0}.checkout{width:100%;background:var(--accent);color:white;border:0;padding:15px;font-weight:bold;cursor:pointer}.checkout.wa{background:#25a244}
+.modal{position:fixed;inset:0;background:#0009;display:none;align-items:center;justify-content:center;z-index:20;padding:15px}.modal.show{display:flex}.modal-box{background:#fff;width:min(480px,100%);padding:25px;max-height:90vh;overflow:auto}.modal-box h2{margin-top:0}.payinfo{background:#faf7f4;border:1px solid var(--line);padding:13px;font-size:13px;line-height:1.7}.payinfo b{color:var(--accent)}.success{background:#edf7ed;padding:13px;color:#245b2a;display:none;margin-top:12px;font-size:13px;line-height:1.5}
+@media(max-width:800px){.hero{grid-template-columns:1fr;gap:30px}.portrait{margin:0 auto;max-width:240px}nav{display:none}.products{grid-template-columns:repeat(2,1fr);gap:15px}.product-image{height:240px}.promo{grid-template-columns:1fr}.promo img{height:260px}}
+@media(max-width:420px){header{padding:0 4%;height:65px}.logo{font-size:20px}.hero{padding:40px 6%}.categories{grid-template-columns:1fr}.category{height:180px}section{padding:45px 5%}.product-image{height:205px}.section-head h2{font-size:25px}.request-wrap{padding:18px}}
+</style></head>
+<body>
+<div class="announcement">NEW SEASON, NEW STYLE — FIND YOUR NEXT FAVOURITE LOOK</div>
+<header><div class="logo">HOT<span>FASHION</span></div><nav><a href="#home">HOME</a><a href="#shop">SHOP</a><a href="#categories">COLLECTIONS</a><a href="#request">REQUEST AN OUTFIT</a></nav><div class="header-actions"><button class="cart-btn" onclick="openCart()">BAG (<span id="cartCount">0</span>)</button></div></header>
+<main>
+<section class="hero" id="home"><div class="hero-copy"><div class="eyebrow">WELCOME TO HOT FASHION</div><h1>OWN YOUR<br>LOOK.</h1><p>Hi, we are Hot Fashion. Discover elegant gowns, fresh men's outfits and statement pieces chosen to help you show up with confidence. Pick your favourites and order straight on WhatsApp.</p><a class="primary" href="#shop">SHOP THE COLLECTION</a></div><div class="portrait"><img data-img="g2" alt="Hot Fashion featured burgundy gown"></div></section>
+<section id="categories"><div class="section-head"><div><h2>Shop by category</h2><p>Find your next favourite look.</p></div></div><div class="categories">
+<div class="category"><img data-img="g2" alt="Women's burgundy gown"><strong>WOMEN</strong></div>
+<div class="category"><img data-img="outfit" alt="Men's outfit"><strong>MEN</strong></div>
+<div class="category"><img data-img="fullset" alt="Men's full set"><strong>NEW ARRIVALS</strong></div>
+</div></section>
+<section id="shop"><div class="section-head"><div><h2>Women's gowns</h2><p>Elegant burgundy designs.</p></div><span>9 DESIGNS</span></div><div class="products" id="womenGrid"></div></section>
+<section><div class="section-head"><div><h2>Men's collection</h2><p>Fresh looks for every day.</p></div><span>11 PRODUCTS</span></div><div class="products" id="menGrid"></div></section>
+<section class="request" id="request"><div class="request-wrap"><div class="eyebrow" style="color:#a52d42">CAN'T FIND WHAT YOU WANT?</div><h2>Request Your Dream Outfit</h2><p class="hint">Upload a photo of a dress, shirt or outfit you like. Tell us what you need and we will check if it is available.</p>
+<form id="requestForm"><div class="field"><label>OUTFIT PHOTO (OPTIONAL PREVIEW)</label><div class="upload"><input type="file" id="requestPhoto" accept="image/jpeg,image/png,image/webp"><img id="photoPreview" class="preview" alt="Your outfit preview"><div class="hint">JPG, PNG or WEBP. Maximum 5 MB.</div></div></div>
+<div class="field"><label>YOUR NAME</label><input name="customerName" required placeholder="Enter your name"></div>
+<div class="field"><label>PHONE NUMBER</label><input name="phone" required type="tel" placeholder="07XX XXX XXX"></div>
+<div class="field"><label>WHAT ARE YOU LOOKING FOR?</label><textarea name="details" placeholder="Colour, size, preferred design or other details"></textarea></div>
+<button class="submit" type="submit">SEND REQUEST ON WHATSAPP</button></form>
+<div class="success" id="requestSuccess"></div>
+<p class="note">WhatsApp links cannot attach photos automatically. After WhatsApp opens, tap the attach icon and send your outfit photo in the chat.</p></div></section>
+<section class="promo" id="about"><img data-img="g5" alt="Burgundy evening gown"><div><div class="eyebrow" style="color:#a52d42">THE HOT FASHION EDIT</div><h2>Look good.<br>Feel unstoppable.</h2><p>Explore versatile pieces for everyday wear, special moments and everything in between.</p><a class="primary" href="#shop">EXPLORE THE SHOP</a></div></section>
+</main>
+<footer><div><div class="footer-title">HOT FASHION</div><p>Wear your confidence.<br>Fashion for every moment.</p></div><div><strong>CONTACT</strong><p>WhatsApp: <a id="waLink" href="#" target="_blank" rel="noopener">Chat with us</a><br>Dynamic Mall, ML 171, Fourth Floor<br>Call/WhatsApp: 0701 920 980<br>Open Monday to Sunday<br>Kenya</p></div><div><strong>INFORMATION</strong><p>Delivery &amp; Returns<br>Privacy Policy<br>Terms &amp; Conditions</p></div></footer>
+<div class="overlay" id="cartOverlay" onclick="if(event.target===this)closeCart()"><aside class="drawer"><div class="drawer-head"><h2>Your shopping bag</h2><button class="close" onclick="closeCart()">×</button></div><div id="cartItems"></div><div class="total"><span>Total</span><span id="cartTotal">KSh 0</span></div><button class="checkout" onclick="openCheckout()">PROCEED TO CHECKOUT</button><p class="note">To confirm an order, pay an 80% deposit before delivery. The remaining 20% is paid on delivery.</p></aside></div>
+<div class="modal" id="checkoutModal"><div class="modal-box"><div style="display:flex;justify-content:space-between"><h2>Checkout</h2><button class="close" onclick="closeCheckout()">×</button></div><form id="checkoutForm">
+<div class="field"><label>FULL NAME</label><input required name="name" placeholder="Your name"></div><div class="field"><label>PHONE NUMBER</label><input required name="phone" type="tel" placeholder="07XX XXX XXX"></div><div class="field"><label>DELIVERY LOCATION</label><textarea required name="address" placeholder="Estate, town and delivery details"></textarea></div><div class="field"><label>PAYMENT TERMS</label><div class="payinfo" id="payInfo"></div></div><button class="checkout wa" type="submit">SEND ORDER ON WHATSAPP</button></form>
+<div class="success" id="successMsg">WhatsApp should now be open with your order ready to send. Tap send there. We will confirm your order and share how to pay the 80% deposit. The 20% balance is paid on delivery. If nothing opened, allow pop-ups and try again.</div></div></div>
+<script>
+const IMG={ "g1": "g1.jpg", "g2": "g2.jpg", "g3": "g3.jpg", "g4": "g4.jpg", "g5": "g5.jpg", "g6": "g6.jpg", "g7": "g7.jpg", "g8": "g8.jpg", "g9": "g9.jpg", "shirt": "shirt.jpg", "outfit": "outfit.jpg", "jacket": "jacket.jpg", "gurkha": "gurkha.jpg", "white": "white.jpg", "fullset": "fullset.jpg", "jeans": "jeans.jpg", "cap": "cap.jpg", "loafers": "loafers.jpg", "cream": "cream.jpg", "brown": "brown.jpg"};
+// ====== SHOP SETTINGS: change this to your WhatsApp number (country code, no + or spaces) ======
+const WHATSAPP_NUMBER="254701920980";
+// ================================================================================================
+const products=[
+{id:1,name:"Burgundy Off-Shoulder Ball Gown",price:2500,img:"g1",group:"women"},
+{id:2,name:"Burgundy Glitter Mermaid Gown",price:2700,img:"g2",group:"women"},
+{id:3,name:"Burgundy Sparkle Ball Gown",price:2900,img:"g3",group:"women"},
+{id:4,name:"Glitter Gown with Tulle Detail",price:3100,img:"g4",group:"women"},
+{id:5,name:"Burgundy Ruched Sweetheart Gown",price:3300,img:"g5",group:"women"},
+{id:6,name:"Long-Sleeve Cape Gown",price:3500,img:"g6",group:"women"},
+{id:7,name:"Burgundy Ruffle Gown",price:3700,img:"g7",group:"women"},
+{id:8,name:"Strappy Velvet Ruched Gown",price:3900,img:"g8",group:"women"},
+{id:9,name:"Dramatic Ruffle Evening Gown",price:4100,img:"g9",group:"women"},
+{id:10,name:"Knitted Pattern Shirt",price:1500,img:"shirt",group:"men"},
+{id:11,name:"Knitted Shirt Outfit",price:1700,img:"outfit",group:"men"},
+{id:12,name:"Quality Leather Jacket",price:1900,img:"jacket",group:"men"},
+{id:13,name:"Gurkha Trousers",price:2100,img:"gurkha",group:"men"},
+{id:14,name:"White Shirt Outfit",price:2300,img:"white",group:"men"},
+{id:15,name:"Men's Full Set",price:2500,img:"fullset",group:"men"},
+{id:16,name:"Black Washed Slim Jeans",price:1800,img:"jeans",group:"men"},
+{id:17,name:"White Mesh Cap",price:600,img:"cap",group:"men"},
+{id:18,name:"Beige Suede Loafers",price:2200,img:"loafers",group:"men"},
+{id:19,name:"Cream Pleated Trousers",price:1900,img:"cream",group:"men"},
+{id:20,name:"Brown Knitted Cuban Shirt",price:1600,img:"brown",group:"men"}
+];
+let cart=[];
+const money=n=>"KSh "+n.toLocaleString("en-KE");
+const waUrl=text=>"https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(text);
+document.querySelectorAll("img[data-img]").forEach(i=>i.src=IMG[i.dataset.img]);
+document.getElementById("waLink").href=waUrl("Hello Hot Fashion, I would like to ask about an outfit.");
+function productCard(p){return `<article class="product"><div class="product-image ${p.group==="women"?"gown":""}"><span class="tag">${p.group==="women"?"WOMEN":"MEN"}</span><img src="${IMG[p.img]}" alt="${p.name}" loading="lazy"></div><h3>${p.name}</h3><div class="price">${money(p.price)}</div><button class="add" onclick="addToCart(${p.id})">ADD TO BAG</button></article>`}
+document.getElementById("womenGrid").innerHTML=products.filter(p=>p.group==="women").map(productCard).join("");
+document.getElementById("menGrid").innerHTML=products.filter(p=>p.group==="men").map(productCard).join("");
+function addToCart(id){const p=products.find(x=>x.id===id);const item=cart.find(x=>x.id===id);if(item)item.qty++;else cart.push({...p,qty:1});renderCart();openCart()}
+function renderCart(){document.getElementById("cartCount").textContent=cart.reduce((s,x)=>s+x.qty,0);document.getElementById("cartItems").innerHTML=cart.length?cart.map(x=>`<div class="cart-item"><img src="${IMG[x.img]}" alt=""><div style="flex:1"><h4>${x.name}</h4><p>${money(x.price)} × ${x.qty}</p><button class="remove" onclick="removeItem(${x.id})">Remove</button></div></div>`).join(""):'<p>Your bag is empty. Add something you love!</p>';document.getElementById("cartTotal").textContent=money(cart.reduce((s,x)=>s+x.price*x.qty,0))}
+function removeItem(id){cart=cart.filter(x=>x.id!==id);renderCart()}
+function openCart(){document.getElementById("cartOverlay").classList.add("show")}function closeCart(){document.getElementById("cartOverlay").classList.remove("show")}
+const cartTotalValue=()=>cart.reduce((s,x)=>s+x.price*x.qty,0);
+function splitPay(){const total=cartTotalValue(),dep=Math.round(total*0.8);return{total,dep,bal:total-dep}}
+function openCheckout(){if(!cart.length){alert("Your shopping bag is empty.");return}
+const s=splitPay();document.getElementById("payInfo").innerHTML=`Order total: <b>${money(s.total)}</b><br>Deposit before delivery (80%): <b>${money(s.dep)}</b><br>Balance on delivery (20%): <b>${money(s.bal)}</b><br>Your order is confirmed once the deposit is paid. We do not offer full cash on delivery.`;closeCart();document.getElementById("checkoutModal").classList.add("show")}
+function closeCheckout(){document.getElementById("checkoutModal").classList.remove("show")}
+document.getElementById("checkoutForm").addEventListener("submit",function(e){
+e.preventDefault();if(!cart.length)return;
+const f=new FormData(this);
+const lines=cart.map(x=>`• ${x.name} × ${x.qty} = ${money(x.price*x.qty)}`).join("\n");
+const s=splitPay(),total=money(s.total);
+const msg=`NEW ORDER - HOT FASHION\n\n${lines}\n\nTotal: ${total}\n\nName: ${f.get("name")}\nPhone: ${f.get("phone")}\nDelivery: ${f.get("address")}\n\nPAYMENT TERMS:\nDeposit before delivery (80%): ${money(s.dep)}\nBalance on delivery (20%): ${money(s.bal)}\nPlease send me the deposit payment details.`;
+window.open(waUrl(msg),"_blank");
+document.getElementById("successMsg").style.display="block";
+cart=[];renderCart();this.reset()});
+const photoInput=document.getElementById("requestPhoto"),preview=document.getElementById("photoPreview");
+photoInput.addEventListener("change",()=>{const file=photoInput.files[0];if(!file){preview.style.display="none";return}if(file.size>5*1024*1024){alert("Please choose an image smaller than 5 MB.");photoInput.value="";preview.style.display="none";return}preview.src=URL.createObjectURL(file);preview.style.display="block"});
+document.getElementById("requestForm").addEventListener("submit",function(e){
+e.preventDefault();const f=new FormData(this);
+const msg=`OUTFIT REQUEST - HOT FASHION\n\nName: ${f.get("customerName")}\nPhone: ${f.get("phone")}\nLooking for: ${f.get("details")||"(see photo)"}\n\nI will send the outfit photo in this chat.`;
+window.open(waUrl(msg),"_blank");
+const s=document.getElementById("requestSuccess");s.textContent="WhatsApp should now be open. Remember to attach your outfit photo in the chat before sending.";s.style.display="block"});
+renderCart();
+</script></body></html>
